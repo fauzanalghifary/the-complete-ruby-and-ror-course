@@ -8,6 +8,8 @@ class ArticlesController < ApplicationController
 
   # GET /articles/1 or /articles/1.json
   def show
+    # byebug
+    # @article = Article.find(params[:id]) # this is not needed because of the before_action
   end
 
   # GET /articles/new
@@ -17,11 +19,13 @@ class ArticlesController < ApplicationController
 
   # GET /articles/1/edit
   def edit
+    # @article = Article.find(params[:id]) # this is not needed because of the before_action
   end
 
   # POST /articles or /articles.json
   def create
     @article = Article.new(article_params)
+    # @article = Article.new(params.require(:article).permit(:title, :description))
 
     respond_to do |format|
       if @article.save
@@ -67,4 +71,5 @@ class ArticlesController < ApplicationController
     def article_params
       params.require(:article).permit(:title, :description)
     end
+
 end
