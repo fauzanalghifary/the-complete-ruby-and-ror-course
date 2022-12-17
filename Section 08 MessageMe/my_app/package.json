@@ -1,0 +1,9 @@
+{
+  "name": "my_app",
+  "private": true,
+  "dependencies": {
+    "jquery": "^3.6.2",
+    "popper.js": "^1.16.1",
+    "semantic-ui-sass": "^2.4.2"
+  }
+}
